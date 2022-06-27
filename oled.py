@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-__author__ = "Xose Pérez & Kai Xi 郗锴"
+__author__ = "Kai Xi 郗锴, Sheng Lyu 吕晟, Taylor Lee 李远朝 & Xose Pérez"
 __copyright__ = "Copyright 2022 RAKWireless"
 __license__ = "MIT"
 __maintainer__ = "RAKWireless"
@@ -37,7 +37,6 @@ START_WIDTH = 5
 # -----------------------------------------------------------------------------
 # Pages
 # -----------------------------------------------------------------------------
-
 
 def network(draw):
     
@@ -122,7 +121,9 @@ def lorawan(draw):
     bucket_size = bucket_data.get('bucket_size')
     buckets = bucket_data['buckets']
     totals = bucket_data['totals']
-    rx_max = totals['rx_max']
+    rx_max = int(totals['rx_max'])
+    if rx_max == 0:
+        return False
 
     # calculate the width of each bucket and real bucket count displayed.
     bucket_width = int(AVAIL_WIDTH / bucket_count) - 1
