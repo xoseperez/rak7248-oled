@@ -1,0 +1,4 @@
+adafruit-circuitpython-ssd1306==2.12.4
+board==1.0
+requests==2.25.1
+Pillow==9.0.1
